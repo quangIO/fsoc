@@ -1,5 +1,5 @@
 # Site settings
-baseurl = ""
+baseUrl = ""
 languageCode = "en"
 title = "FSociety"
 theme = "hugo-theme-paper"
