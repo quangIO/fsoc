@@ -1,0 +1,15 @@
+<footer id="footer">
+    {{ if .Site.Social }}
+        {{ partial "social.html" . }}
+    {{ end }}
+    <p class="row flex-center">
+    {{ with .Site.Params.copyright }}
+        {{ . | markdownify }}
+    {{ else }}
+       © Copyright {{ now.Format "2006"}} <i class="fa fa-heart" aria-hidden="true"></i> {{ .Site.Params.Author }}
+    {{ end }}
+    </p>
+    <p class="row flex-center">
+        Freedom
+    </p>
+</footer>

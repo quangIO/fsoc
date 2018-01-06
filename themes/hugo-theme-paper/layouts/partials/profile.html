@@ -1,0 +1,12 @@
+<section id="wrapper">
+    <div class="row flex-middle flex-center">
+        <!--
+        <a href='{{ .Site.BaseURL }}about'>
+            <img id="avatar" class="2x" src="{{ .Site.BaseURL }}images/avatar.png"/>
+        </a>
+        -->
+        <h1>{{ .Site.Title }}</h1>
+    </div>
+        {{ with .Site.Params.bio }}<p class="row flex-center">{{ . | markdownify }}</p>{{ end }}
+
+</section>

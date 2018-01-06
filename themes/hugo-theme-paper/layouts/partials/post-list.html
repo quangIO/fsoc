@@ -1,0 +1,24 @@
+<div class="col-fill">
+    {{ range where .Paginator.Pages "Params.hidden" "ne" "true" }}
+    {{ $url := replace .Permalink .Site.BaseURL "" }}
+    {{ if ne $url "about/" }}
+    <div class="card margin-bottom-large">
+        <div class="card-body">
+        <a href='{{ .Permalink }}' class="margin row flex-edges flex-middle">
+            <h3 class="col card-title">{{ .Title }}</h3>
+            <p class="col card-subtitle">{{ .Date.Format "Jan 2" }}</p>
+        </a>
+
+        {{ if .Site.Params.enableSummary }}
+        {{ if .Site.Params.useDescriptionReplaceSummary }}
+        <p class="margin-left-large margin card-text">{{ .Description | plainify }}</p>
+        {{ else }}
+        <p class="margin-left-large margin card-text">{{ .Summary | plainify }}</p>
+        {{ end }}
+        {{ end }}
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+

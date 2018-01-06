@@ -1,0 +1,17 @@
+<nav class="row flex-center child-borders">
+	{{ $url := replace .Permalink .Site.BaseURL "" }}
+	{{ if not .IsHome }}
+		<a class="paper-btn margin" href='{{ .Site.BaseURL }}'> <span class="arrow">←</span>{{ with .Site.Params.home }}{{ . }}{{ else }}Home{{ end }}</a>
+	{{ end }}
+	<a class="paper-btn margin" href='{{ .Site.BaseURL }}posts'>{{ with .Site.Params.archive }}{{ . }}{{ else }}Archive{{ end }}</a>
+	{{/* <a class="paper-btn margin" href='{{ .Site.BaseURL }}tags'>{{ with .Site.Params.tags }}{{ . }}{{ else }}Tags{{ end }}</a> */}}
+	<a class="paper-btn margin" href='{{ .Site.BaseURL }}about'>{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
+
+	{{ range $key, $val := .Site.Params.Links }}
+		<a class="paper-btn margin" href="{{ $val }}">{{ $key }}</a>
+	{{ end }}
+
+	{{ if .Site.Params.enableRSS }}
+	<a class="cta paper-btn margin" href="{{ .Site.RSSLink }}">{{ with .Site.Params.subscribe }}{{ . }}{{ else }}Subscribe{{ end }}</a>
+	{{ end }}
+</nav>

@@ -1,0 +1,25 @@
+{{ partial "head.html" . }}
+   <body>
+      {{ partial "nav.html" . }}
+      {{ partial "profile.html" . }}
+
+
+       <section id="wrapper" class="container">
+           <div class="row flex-center child-borders">
+                  {{ $data := .Data }}
+                  {{ range $key, $value := .Data.Terms.ByCount }}
+                     {{ if ($value.Name) }}
+
+                           <a href="{{ $.Site.BaseURL }}{{ $data.Plural }}/{{ $value.Name | urlize }}" class="paper-btn">
+                              {{ $value.Name | upper }} <span>({{ $value.Count }})</span>
+                           </a>
+
+                     {{ end }}
+                  {{ end }}
+           </div>
+           {{ partial "footer.html" . }}
+       </section>
+
+       {{ partial "js.html" . }}
+   </body>
+</html>

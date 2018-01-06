@@ -1,0 +1,20 @@
+{{ partial "head.html" . }}
+<body>
+{{ partial "nav.html" . }}
+
+{{ partial "profile.html" . }}
+
+<div class="row site">
+    <div class="col-3">
+    </div>
+    {{ partial "post-list.html" . }}
+    <div class="col-3">
+        {{ partial "tags.html" . }}
+    </div>
+</div>
+{{ partial "pagination.html" . }}
+{{ partial "footer.html" . }}
+
+{{ partial "js.html" . }}
+</body>
+</html>

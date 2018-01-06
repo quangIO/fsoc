@@ -1,0 +1,17 @@
+name = "Paper"
+license = "MIT"
+licenselink = "https://github.com/nodejh/hugo-theme-cactus-plus/blob/master/LICENSE.md"
+description = "A less formal blog theme"
+homepage = "https://github.com/quangio"
+tags = ["blog", "beautiful", "disqus", "rss", "syntax highlighting", "tags", "papercss", "simple", "pencil", "informal"]
+features = ["blog", "beautiful", "disqus", "rss", "syntax highlighting", "tags"]
+min_version = 0.20
+
+[author]
+  name = "quangio"
+  homepage = "https://github.com/quangio"
+
+[[original]]
+  name = "Cactus Plus"
+  homepage = "https://github.com/nodejh/hugo-theme-cactus-plus"
+  repo = "https://github.com/nodejh/hugo-theme-cactus-plus"

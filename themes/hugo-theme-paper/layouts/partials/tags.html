@@ -1,0 +1,8 @@
+<h4 class="margin row flex-center">
+    Tags
+</h4>
+<section id="tags" class="margin row flex-right">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <a class="paper-btn" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+    {{ end }}
+</section>
